@@ -1,4 +1,4 @@
-# MGMT Groups; barn till "Tenant Root Group"
+# MGMT Groups; children of "Tenant Root Group"
 
 # Landing Zones
 resource "azurerm_management_group" "child1" {
@@ -24,7 +24,7 @@ resource "azurerm_management_group" "child4" {
   parent_management_group_id = "/providers/Microsoft.Management/managementGroups/YOUR_PARENT_MGMT_GRP_ID"
 }
 
-# MGMT Groups; barnbarn till "Tenant Root Group"
+# MGMT Groups; grandchildren of "Tenant Root Group"
 
 # Landing Zones LIA; barn till "Landing Zones"
 resource "azurerm_management_group" "grandchild1" {
@@ -34,7 +34,7 @@ resource "azurerm_management_group" "grandchild1" {
   depends_on = [azurerm_management_group.child1]
 }
 
-# MGMT Groups; barn till "Platform"
+# MGMT Groups; children of "Platform"
 
 # Connectivity
 resource "azurerm_management_group" "grandchild2" {
