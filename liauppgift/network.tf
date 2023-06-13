@@ -189,7 +189,7 @@ resource "azurerm_network_security_rule" "nsgrule4" {
   network_security_group_name = azurerm_network_security_group.nsg3.name
 }
 
-# Route table, user-defined routes för att routa genom Firewall 
+# Route table + user-defined route to route through the Firewall 
 
 # UDR for VNet1
 resource "azurerm_route_table" "vnet1udr" {
